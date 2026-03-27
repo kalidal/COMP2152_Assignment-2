@@ -14,7 +14,7 @@ print(f"Python Version: {platform.python_version()}")
 print(f"Operating System: {os.name}")
 
 # TODO: Create the common_ports dictionary (Step iv)
-#   Maps port numbers to their standard network service names
+# Maps port numbers to their standard network service names
 common_ports = {
     21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP",
     53: "DNS", 80: "HTTP", 110: "POP3", 143: "IMAP",
@@ -26,6 +26,12 @@ common_ports = {
 class NetworkTool:
     def __init__(self, target):
         self.__target = target  # Private property
+
+    # Q3: What is the benefit of using @property and @target.setter?
+    # TODO: Your 2-4 sentence answer here... (Part 2, Q3)
+    #   Using @property and a setter gives us control over how the target value is accessed and changed.
+    #   Instead of letting anything directly modify it, we can validate it first (like preventing empty values).
+    #   It also keeps the variable private while still letting us use it like a normal attribute.
 
     @property
     def target(self):
@@ -42,11 +48,6 @@ class NetworkTool:
         print("NetworkTool instance destroyed")
 
 
-# Q3: What is the benefit of using @property and @target.setter?
-# TODO: Your 2-4 sentence answer here... (Part 2, Q3)
-#   Using @property and a setter gives us control over how the target value is accessed and changed.
-#   Instead of letting anything directly modify it, we can validate it first (like preventing empty values).
-#   It also keeps the variable private while still letting us use it like a normal attribute.
 
 # Q1: How does PortScanner reuse code from NetworkTool?
 # TODO: Your 2-4 sentence answer here... (Part 2, Q1)
